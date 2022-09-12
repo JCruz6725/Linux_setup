@@ -1,16 +1,18 @@
 import os
 import time
 
-pass = str(input('pass:'))
+
+pas = str(input('pass:'))
 user = 'john'
-os.system("useradd -p "+pass+" " + user)
-time.sleep(2)
+
+os.system("apt-get update")
+os.system("useradd -p "+pas+" " + user)
 os.system("usermod -aG admin "+user+" ; usermod -aG sudo "+user)
 os.system("su j")
 os.system("sudo adduser xrdp ssl-cert")
-os.system(pass)
+os.system(pas)
 os.system("sudo systemctl restart xrdp")
-os.system(pass)
+os.system(pas)
 os.system("sudo apt install xfce4")
-os.system(pass)
+os.system(pas)
 
